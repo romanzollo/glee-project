@@ -1,0 +1,277 @@
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 100px;
+  padding: 48px 0 45px 0;
+  box-shadow: 0 5px 30px 0 rgb(152 152 152 / 20%);
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  &__name {
+    @extend %rubik-500;
+    font-size: 36px;
+    color: $text;
+    margin-left: 12px;
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @extend %rubik-500;
+    font-size: 15px;
+    line-height: 12px;
+  }
+
+  &__list-link {
+    color: $text;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $accent-dark;
+    }
+  }
+
+  &__list-item+.menu__list-item {
+    padding-left: 35px;
+  }
+}
+
+.user-nav {
+  &__inner {
+    max-width: 320px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__search {
+    width: 51px;
+    height: 51px;
+    background-color: $accent-light;
+    border-radius: 50%;
+    position: relative;
+
+    svg {
+      position: absolute;
+      top: 17px;
+      left: 17px;
+    }
+  }
+
+  &__shop {
+    margin-left: 21px;
+    margin-right: 18px;
+    width: 178px;
+    height: 51px;
+    background-color: $bg;
+    border-radius: 25px;
+    position: relative;
+  }
+
+  &__menu {
+    width: 51px;
+    height: 51px;
+    background-color: $accent-dark;
+    border-radius: 50%;
+    position: relative;
+
+    svg {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+    }
+  }
+
+  &__shop-link {
+    &:nth-child(1) {
+      position: absolute;
+      top: 18px;
+      left: 38px;
+
+      &::after {
+        content: '';
+        left: 50px;
+        top: -8px;
+        position: absolute;
+        width: 1px;
+        height: 32px;
+        background-color: #fff;
+      }
+    }
+
+    &:nth-child(2) {
+      position: absolute;
+      top: 18px;
+      right: 41px;
+    }
+  }
+}
+
+.user-nav__num {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  border-radius: 50%;
+  background-color: #fff;
+  text-align: center;
+  font-size: 10px;
+  color: $default;
+  @extend %dmsans-400;
+  top: -5px;
+  left: 12px;
+}
+
+.menu__btn {
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  .menu {
+    display: flex;
+    order: 1;
+
+    &__list-item {
+      width: 100%;
+      text-align: center;
+      padding: 0 15px;
+    }
+
+    &__list-item+.menu__list-item {
+      padding-left: 15px;
+    }
+
+    &__list-link {
+      display: block;
+      padding: 15px 0;
+    }
+  }
+
+  .menu__list {
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 115px;
+    width: 100%;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+    transition: all .3s ease;
+    background-color: #fff;
+
+    &.menu__list--active {
+      max-height: 1000px;
+      transition: all 0.6s ease;
+    }
+  }
+
+  .menu__btn {
+    width: 30px;
+    height: 22px;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: $text;
+      transition: all 0.25s ease;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    span {
+      width: 100%;
+      height: 3px;
+      background-color: $text;
+    }
+
+    &.menu__btn--active {
+      &::before {
+        transform: rotate(45deg);
+        position: absolute;
+        top: 9px;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 9px;
+      }
+
+      span {
+        height: 0;
+        transition: all .25s ease;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 786px) {
+  .user-nav {
+    &__shop {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    &__wrapper {
+      flex-wrap: wrap;
+    }
+  }
+
+  .user-nav {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+
+    &__shop {
+      width: 170px;
+    }
+
+    &__shop-link:nth-child(1) {
+      left: 33px;
+    }
+  }
+
+  .menu {
+    order: 0;
+  }
+
+  .menu__list.menu__list--active {
+    transform: translateY(0);
+  }
+}
