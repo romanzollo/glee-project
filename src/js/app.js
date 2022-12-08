@@ -9,4 +9,10 @@ $(function () {
     $('.menu__btn').toggleClass('menu__btn--active');
     $('.menu__list').toggleClass('menu__list--active');
   });
+
+  // footer-top__nav
+  $('.footer-top__title').on('click', function () {
+    $(this).siblings('.footer-top__list--hidden').slideToggle();
+    $(this).toggleClass('title-show--active');
+  });
 })
