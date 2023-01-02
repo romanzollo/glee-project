@@ -22,4 +22,39 @@ body {
   padding: 0 15px;
 }
 
+.big-container {
+  max-width: 1770px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.title {
+  @extend %dmsans-700;
+  font-size: 36px;
+  text-align: center;
+  color: #191919;
+}
+
+
+.filter-btns {
+  margin-bottom: 80px;
+}
+
+.filter-btn {
+  @extend %dmsans-700;
+  font-size: 16px;
+  text-align: center;
+  color: #8b8b8b;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-btn + .filter-btn {
+  padding-left: 30px;
+}
+
+.mixitup-control-active {
+  color: #1a1a1a;
+}
 

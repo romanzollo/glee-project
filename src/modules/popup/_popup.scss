@@ -1,0 +1,27 @@
+.popup {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 820px) {
+  .popup {
+    height: 400px;
+  }
+}
+
+@media (max-width: 650px) {
+  .popup {
+    height: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .popup {
+    height: 250px;
+  }
+}

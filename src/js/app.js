@@ -1,11 +1,13 @@
 import $ from "jquery";
-
 import Swiper from 'swiper/bundle';
+import mixitup from 'mixitup';
+import { Fancybox } from "@fancyapps/ui";
 
 
 import * as flsFunctions from "./modules/functions.js";
 flsFunctions.isWebp();
 
+// swiper
 const swiper = new Swiper('.top-slider__swiper', {
   effect: 'fade',
   fadeEffect: {
@@ -24,6 +26,22 @@ const swiper = new Swiper('.top-slider__swiper', {
     },
   },
 });
+
+// mixitup 
+var containerEl1 = document.querySelector('[data-ref="container-1"]');
+var containerEl2 = document.querySelector('[data-ref="container-2"]');
+
+var config = {
+  controls: {
+    scope: 'local'
+  }
+};
+
+var mixer1 = mixitup(containerEl1, config);
+var mixer2 = mixitup(containerEl2, config);
+
+
+
 
 $(function () {
   $('.menu__btn').on('click', function () {
