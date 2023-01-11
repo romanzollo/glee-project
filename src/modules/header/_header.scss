@@ -6,7 +6,9 @@
   box-shadow: 0 5px 30px 0 rgb(152 152 152 / 20%);
   z-index: 100;
   background-color: #fff;
-
+  .mid-container {
+    max-width: 1800px;
+  }
   &__wrapper {
     display: flex;
     justify-content: space-between;

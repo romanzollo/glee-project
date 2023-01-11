@@ -40,15 +40,11 @@ $bg: #fcd7b6;
   font-weight: 700;
 }
 
-// %btn {
-//   background-color: $accent;
-//   text-transform: uppercase;
-//   color: #fff;
-//   padding: 13px 26px;
-//   box-shadow: 0px 7px 20px 0 rgba(255, 17, 48, 0.3);
-//   @extend %roboto-400;
-//   cursor: pointer;
-// }
+%poppins-600 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
 %btn {
   cursor: pointer;
   background-color: $accent-dark;
@@ -61,9 +57,34 @@ $bg: #fcd7b6;
   height: 60px;
   display: inline-block;
   padding-right: 100px;
+  border-radius: 5px;
 }
 
-
+%btn-min {
+  cursor: pointer;
+  background-color: $accent-dark;
+  color: #fff;
+  @extend %poppins-600;
+  font-size: 15px;
+  line-height: 50px;
+  padding-left: 18px;
+  height: 50px;
+  display: inline-block;
+  border-radius: 5px;
+  transition: all 1s;
+  &::after {
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 11px;
+    background-image: url('../img/about/icons/about-arrow_icon.svg');
+    top: 20px;
+    right: 26px;
+  }
+  &:hover {
+    scale: (1.1);
+  }
+}
 
 @function max($numbers...) {
   @return m#{a}x(#{$numbers});

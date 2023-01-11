@@ -1,0 +1,156 @@
+.team {
+  padding: 120px 0 60px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: minmax(auto, 370px) minmax(auto, 770px);
+    gap: 30px;
+  }
+
+  &__title {
+    color: $default;
+    text-align: left;
+    margin-bottom: 35px;
+  }
+}
+
+.team-descr {
+  &__text {
+    max-width: 305px;
+    margin-bottom: 40px;
+  }
+
+  &__btn {
+    position: relative;
+    @extend %btn-min;
+    width: 170px;
+    @extend %poppins-600;
+
+  }
+}
+
+.team-grid {
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(auto, 370px));
+    grid-template-rows: minmax(auto, 320px);
+    grid-auto-rows: minmax(auto, 320px);
+    gap: 100px 30px;
+  }
+
+  &__item {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  &__item-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    box-shadow: 0px 6px 57px 0 rgba(37, 37, 37, 0.05);
+    background-color: #fff;
+    max-width: 325px;
+    width: 100%;
+    height: 111px;
+    bottom: -61px;
+  }
+
+  &__item-info {
+    padding-left: 25px;
+  }
+
+  &__item-name {
+    @extend %dmsans-700;
+    font-size: 22px;
+    line-height: 21px;
+    color: $text;
+    margin-bottom: 15px;
+  }
+
+  &__item-descr {
+    color: #565872;
+  }
+
+  &__item-social {
+    padding-right: 20px;
+  }
+
+  &__item-link {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    background-color: #f6f6f6;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item-link+.team-grid__item-link {
+    margin-left: 5px;
+    margin-bottom: 1px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .team {
+    &__wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .team-descr {
+    &__text {
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .team {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .team-grid {
+    &__items {
+      grid-template-columns: 1fr;
+      gap: 80px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .team-grid {
+    &__items {
+      grid-template-rows: minmax(auto, 250px);
+      grid-auto-rows: minmax(auto, 250px);
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .team {
+    &__title {
+      margin-bottom: 30px;
+    }
+  }
+
+  .team-grid {
+    &__item-info {
+      padding-left: 15px;
+    }
+
+    &__item-box {
+      height: 100px;
+    }
+
+    &__item-name {
+      margin-bottom: 5px;
+      font-size: 20px;
+    }
+  }
+}
