@@ -2,18 +2,20 @@
 <html lang="en">
 
 @@include('modules/head/head.html', {
-"title":"Home page"
+  "title":"Terms & Conditions"
 })
 <body>
   @@include('modules/header/header.html', {})
 
   <main class="main">
-    @@include('modules/top-slider/top-slider.html', {})
-    @@include('modules/products/products.html', {})
-    @@include('modules/design/design.html', {})
-    @@include('modules/popup/popup.html', {})
+    @@include('modules/top/top.html', {
+      "page": "Terms & Conditions",
+      "link": ""
+    })
+
+    @@include('modules/terms/terms.html', {})
     @@include('modules/articles/articles.html', {
-      "color-class": "color-black",
+      "color-class": "color-default"
     })
   </main>
 
@@ -21,4 +23,4 @@
 
   <script src="js/app.min.js"></script>
 </body>
-</html> 
+</html>

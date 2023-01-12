@@ -34,10 +34,19 @@ body {
   padding: 0 15px;
 }
 
-.title {
+.title,
+.title-black {
   @extend %dmsans-700;
   font-size: 36px;
   text-align: center;
+  color: #191919;
+}
+
+.color-default {
+  color: $default;
+}
+
+.color-black {
   color: #191919;
 }
 
@@ -109,5 +118,6 @@ body {
 @media (max-width: 400px) {
   .top-title {
     font-size: 32px;
+    line-height: 35px;
   }
 }
