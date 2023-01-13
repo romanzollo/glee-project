@@ -1,0 +1,23 @@
+.partners {
+  background: rgba(252, 215, 182, 0.2);
+
+  &__list {
+    padding: 80px 0 90px 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .partners {
+    &__list {
+      padding: 60px 0 90px 0;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .partners {
+    &__list {
+      padding: 20px 0 50px 0;
+    }
+  }
+}

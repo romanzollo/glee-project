@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('modules/head/head.html', {
+  "title":"Log in"
+})
+<body>
+  @@include('modules/header/header.html', {})
+
+  <main class="main">
+    @@include('modules/top/top.html', {
+      "page": "Log in",
+      "link": "login.html"
+    })
+
+    @@include('modules/login/login.html', {})
+    @@include('modules/partners/partners.html', {})
+  </main>
+
+  @@include('modules/footer/footer.html', {})
+
+  <script src="js/app.min.js"></script>
+</body>
+</html>
