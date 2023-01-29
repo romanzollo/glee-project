@@ -53,18 +53,18 @@
     &:hover {
       box-shadow: 3px 3px 5px #cacaca;
     }
+
+    &:hover .articles__item-img {
+      transition: 1s;
+      transform: scale(1.1);
+    }
   }
 
   &__scale {
     overflow: hidden;
   }
 
-  &__item-img {
-    transition: 1s;
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
+  
 
   &__img-box {
     position: relative;
