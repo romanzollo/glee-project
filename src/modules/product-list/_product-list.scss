@@ -1,0 +1,166 @@
+.product-list {
+  &__item {
+    display: grid;
+    grid-template-columns: minmax(auto, 370px) auto;
+    gap: 50px;
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item-imgbox {
+    width: 370px;
+    height: 500px;
+    border: solid 2px #f2f2f2;
+    background-color: #fefefe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item-img {
+    padding: 82px 24px;
+  }
+
+  // &__item-descr {
+  //   width: 410px;
+  // }
+  &__item-title {
+    @extend %rubik-400;
+    font-size: 40px;
+    line-height: 0.75;
+    color: #333;
+    margin-top: 90px;
+    margin-bottom: 25px;
+  }
+
+  &__price {
+    font-size: 30px;
+    line-height: 0.75;
+    color: #333;
+    margin: 35px 0;
+  }
+
+  &__btn {
+    width: 50px;
+    height: 50px;
+    box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+    background-color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .3s ease 0s;
+  }
+
+  &__hidden {
+    display: none;
+    @extend %rubik-400;
+    font-size: 15px;
+    line-height: 0.75;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  &__item-buttons {
+    margin-top: 40px;
+    display: flex;
+  }
+
+  &__button-cart {
+    background-color: $accent-dark;
+    margin-right: 11px;
+
+    svg {
+      path {
+        fill: #fff;
+      }
+    }
+
+    &:hover {
+      width: 208px;
+      border-radius: 5px;
+
+      svg {
+        display: none;
+      }
+
+      .product-list__hidden {
+        display: block;
+      }
+
+      &+.product-list__button-heart {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .product-list {
+    &__item {
+      gap: 30px;
+    }
+
+    &__item-imgbox {
+      height: 420px;
+    }
+
+    &__item-img {
+      padding: 40px 20px;
+    }
+
+    &__item-title {
+      margin-top: 20px;
+    }
+
+    &__price {
+      margin: 30px 0;
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  .product-list {
+    &__item {
+      display: block;
+    }
+
+    &__item-imgbox {
+      margin: 0 auto;
+      width: 100%;
+      height: 400px;
+    }
+
+    &__item-img {
+      padding: 0;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .product-list {
+    &__item-imgbox {
+      height: 370px;
+    }
+
+    &__item-title {
+      font-size: 35px;
+      margin-bottom: 20px;
+    }
+
+    &__price {
+      margin: 20px 0;
+      font-size: 25px;
+    }
+
+    &__item-buttons {
+      margin-top: 25px;
+    }
+  }
+}

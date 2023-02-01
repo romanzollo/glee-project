@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('modules/head/head.html', {
+  "title":"Product grid"
+})
+<body>
+  @@include('modules/header/header.html', {})
+
+  <main class="main">
+    @@include('modules/top/top.html', {
+      "page": "Product Grid",
+      "link": "product-grid.html"
+    })
+
+    @@include('modules/product-grid/product-grid.html', {})
+
+    @@include('modules/partners/partners.html', {})
+  </main>
+
+  @@include('modules/footer/footer.html', {})
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+  <script src="js/app.min.js"></script>
+</body>
+</html>
