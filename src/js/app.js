@@ -9,7 +9,7 @@ import * as flsFunctions from "./modules/functions.js";
 flsFunctions.isWebp();
 
 document.addEventListener('DOMContentLoaded', () => {
-  // swiper
+  // swiper index.html
   const swiper = new Swiper('.top-slider__swiper', {
     effect: 'fade',
     fadeEffect: {
@@ -27,6 +27,55 @@ document.addEventListener('DOMContentLoaded', () => {
         return '<span class="' + className + '">' + (index + 1) + "</span>";
       },
     },
+  });
+
+  // swiper related ptoducts
+  var swiperRelatedProducts = new Swiper(".related-products__slider", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    breakpoints: {
+      // mobile first
+      300: {
+        slidesPerView: 1,
+        spaceBetween: 0
+      },
+      400: {
+        slidesPerView: 1,
+        spaceBetween: 10
+      },
+      650: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      },
+      1100: {
+        slidesPerView: 4,
+        spaceBetween: 30
+      },
+    }
+    
+  })
+
+  // swiper product
+  var swiperThumb = new Swiper(".swiperThumb", {
+    slidesPerView: 3,
+    direction: "vertical",
+  });
+  var swiperBig = new Swiper(".swiperBig", {
+    slidesPerView: 1,
+    loop: true,
+    thumbs: {
+      swiper: swiperThumb,
+    },
+    
   });
 
   // mixitup 
@@ -94,14 +143,22 @@ $(function () {
     $('.menu__list').toggleClass('menu__list--active');
   });
 
+  // Form styler
+  const $stylerForm = $('.product-page__content-num');
+  if ($stylerForm.length > 0) {
+    $($stylerForm).styler();
+  }
+
+
   // footer-top__nav
   $('.footer-top__title').on('click', function () {
     $(this).siblings('.footer-top__list--hidden').slideToggle();
     $(this).toggleClass('title-show--active');
   });
 
+  // stars
   let $star = $('.stars');
-  let $starBig = $('.product-list__stars');
+  let $starBig = $('.product-stars');
   if ($star.length > 0) {
     $star.rateYo({
       starWidth: "12px",
@@ -127,6 +184,16 @@ $(function () {
   // shop__filter-btn
   $('.product-grid__filter-btn').on('click', function () {
     $('.product-grid__filters').slideToggle();
+  });
+
+  // add class 'product-tabs__top-item--active' on click
+  $('.product-tabs__top-item').on('click', function (e) {
+    e.preventDefault();
+    $('.product-tabs__top-item').removeClass('product-tabs__top-item--active');
+    $(this).addClass('product-tabs__top-item--active');
+
+    $('.product-tabs__content-item').removeClass('product-tabs__content-item--active');
+    $($(this).attr('href')).addClass('product-tabs__content-item--active');
   });
 
 });

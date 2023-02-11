@@ -24,25 +24,6 @@
     padding: 82px 24px;
   }
 
-  // &__item-descr {
-  //   width: 410px;
-  // }
-  &__item-title {
-    @extend %rubik-400;
-    font-size: 40px;
-    line-height: 0.75;
-    color: #333;
-    margin-top: 90px;
-    margin-bottom: 25px;
-  }
-
-  &__price {
-    font-size: 30px;
-    line-height: 0.75;
-    color: #333;
-    margin: 35px 0;
-  }
-
   &__btn {
     width: 50px;
     height: 50px;

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('modules/head/head.html', {
+"title":"Product detalis"
+})
+
+<body>
+  @@include('modules/header/header.html', {})
+
+  <main class="main">
+    @@include('modules/top/top.html', {
+    "page": "Product Detalis",
+    "link": "product-details.html"
+    })
+    @@include('modules/product-details/product-details.html', {})
+    @@include('modules/related-products/related-products.html', {})
+
+    @@include('modules/articles/articles.html', {})
+  </main>
+
+  @@include('modules/footer/footer.html', {})
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+  <script defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/jQueryFormStyler/2.0.2/jquery.formstyler.min.js?_v=20221210220651"></script>
+  <script src="js/app.min.js"></script>
+</body>
+
+</html>
