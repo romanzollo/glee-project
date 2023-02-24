@@ -46,11 +46,91 @@
       color: $accent-dark;
     }
   }
+  &__list-item {
+    position: relative;
+    padding: 10px 0;
+  }
 
   &__list-item+.menu__list-item {
     padding-left: 35px;
   }
 }
+
+/* ---------Множественное меню-------------- */
+.menu__sub-list {
+  position: absolute;
+  top: 100%;
+  background-color: #fff;
+  box-shadow: 0 5px 30px 0 rgb(152 152 152 / 20%);
+  padding: 15px;
+  right: 0;
+  min-width: 140px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.menu__sub-item {
+  margin-bottom: 15px;
+}
+
+.menu__sub-item+.menu__sub-item {
+  margin-bottom: 0;
+}
+
+.menu__sub-link {
+  color: $text;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $accent-dark;
+  }
+}
+
+body._pc .menu__list-item:hover .menu__sub-list {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0px, 0px);
+  pointer-events: all;
+}
+
+.menu__arrow {
+  display: none;
+}
+
+body._touch .menu__item {
+  display: flex;
+  align-items: center;
+}
+
+body._touch .menu__link {
+  flex: 1 1 auto;
+}
+
+body._touch .menu__arrow {
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 15px;
+  top: 17px;
+  margin-left: 5px;
+  transition: transform 0.3s ease 0s;
+  border-left: 5px solid #fff;
+  border-right: 5px solid #fff;
+  border-top: 10px solid $text;
+}
+
+body._touch .menu__list-item._active .menu__sub-list {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0px, 0px);
+  pointer-events: all;
+}
+
+body._touch .menu__list-item._active .menu__arrow {
+  transform: rotate(-180deg);
+}
+/* ----------------------------------------- */
 
 .user-nav {
   &__inner {
@@ -140,6 +220,17 @@
 
 .menu__btn {
   display: none;
+}
+
+@media (min-width: 1050px) {
+  .menu__sub-list {
+    transform: translate(0px, 10%);
+    visibility: hidden;
+    pointer-events: none;
+      /* запрещает любое взаимодействие с объектом */
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+  }
 }
 
 @media (max-width: 1050px) {
@@ -238,6 +329,34 @@
     }
   }
 
+  .menu__sub-list {
+    position: relative;
+    background-color: #fff;
+    flex: 1 1 100%;
+    margin: 20px 0 0 0;
+    display: none;
+  }
+
+  .menu__list-item._active .menu__sub-list {
+    display: block;
+    position: unset;
+    text-align: center;
+    margin: -10px 0 5px;
+    background-color: $accent-light;
+    box-shadow: none;
+    padding: 20px 10px;
+  }
+
+  body._pc .menu__list--active .menu__list-item:hover .menu__sub-list {
+    display: block;
+    position: unset;
+    text-align: center;
+    margin: -10px 0 5px;
+    background-color: $accent-light;
+    box-shadow: none;
+    padding: 20px 10px;
+    opacity: 1;
+  }
 }
 
 @media (max-width: 786px) {

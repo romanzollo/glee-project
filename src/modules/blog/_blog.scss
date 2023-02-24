@@ -1,0 +1,173 @@
+.blog-page {
+  padding: 120px 0;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__content {
+    width: 830px;
+    margin-right: 70px;
+  }
+
+  &__img-box {
+    position: relative;
+  }
+
+  &__item+.blog-page__item {
+    margin-top: 50px;
+  }
+
+  &__item-title {
+    text-align: left;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 34px;
+  }
+
+  &__item-text {
+    margin-bottom: 40px;
+  }
+
+  &__item-link {
+    display: block;
+    width: 180px;
+    height: 60px;
+    line-height: 60px;
+    border: solid 1px $accent-dark;
+    color: $accent-dark;
+    font-size: 15px;
+    padding-left: 20px;
+    transition: all ease .3s;
+
+    & span {
+      display: inline-block;
+      margin-left: 44px;
+
+      svg {
+        path {
+          transition: all ease .3s;
+          fill: $accent-dark;
+        }
+      }
+    }
+
+    &:hover {
+      border: solid 1px $text;
+      color: $text;
+
+      span {
+        svg {
+          path {
+            fill: $text;
+          }
+        }
+      }
+    }
+  }
+
+  & .pagination {
+    margin-top: 70px;
+    justify-content: flex-start;
+  }
+}
+
+.info-box {
+  width: 275px;
+  height: 71px;
+  background-color: $accent-dark;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 0 30px 0 22px;
+  line-height: 71px;
+
+  &__date,
+  &__author {
+    color: #fff;
+    font-size: 12px;
+    padding-left: 18px;
+    position: relative;
+    text-transform: uppercase;
+
+    &::before {
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      content: '';
+      left: 0;
+      top: -1px;
+    }
+  }
+
+  &__date {
+    margin-right: 20px;
+
+    &::before {
+      background-image: url('../img/icons/calendar_white.svg');
+    }
+  }
+
+  &__author {
+    &::before {
+      background-image: url('../img/icons/user_white.svg');
+      top: 0;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .blog-page {
+    &__inner {
+      flex-direction: column;
+    }
+
+    &__content {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    &__img {
+      width: 100%;
+    }
+
+    &__aside {
+      width: 100%;
+      order: -1;
+    }
+
+    & .filter-category {
+      display: none;
+    }
+
+    & .recent-posts {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .blog-page {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .info-box {
+    width: 240px;
+    height: 60px;
+    padding: 0 15px;
+    line-height: 60px;
+    text-align: center;
+  }
+
+  .info-box__date,
+  .info-box__author {
+    font-size: 11px;
+  }
+
+  .info-box__date {
+    margin-right: 15px;
+  }
+}
