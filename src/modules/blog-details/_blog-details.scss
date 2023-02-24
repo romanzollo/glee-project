@@ -1,0 +1,203 @@
+.blog-details {
+  &__item-title {
+    margin-bottom: 25px;
+  }
+
+  &__subtitle {
+    @extend %rubik-500;
+    margin-bottom: 27px;
+  }
+
+  &__text {
+    margin-bottom: 43px;
+  }
+
+  &__box-img {
+    margin-right: 30px;
+    margin-bottom: 10px;
+    float: left;
+  }
+
+  &__box-text {
+    margin-bottom: 50px;
+  }
+
+  &__box-text+.blog-details__box-text {
+    margin-bottom: 0;
+  }
+
+  &__box-title {
+    @extend %rubik-500;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.blockquote {
+  padding: 25px 95px 25px 40px;
+  background-color: rgba(163, 187, 200, 0.2);
+  margin-bottom: 45px;
+  border-left: 7px solid $accent-dark;
+  position: relative;
+
+  &__author {
+    padding-left: 45px;
+    display: block;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 4px;
+      background-color: $accent-dark;
+      left: 44px;
+      bottom: 38px;
+    }
+  }
+}
+
+.author {
+  padding: 25px 0;
+  margin: 65px 0;
+  border-top: 2px solid #ebebeb;
+  border-bottom: 2px solid #ebebeb;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  &__info {
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    margin-right: 28px;
+  }
+
+  &__name,
+  &__position {
+    display: block;
+  }
+
+  &__name {
+    @extend %rubik-500;
+    font-size: 18px;
+    line-height: 0.75;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  &__position {
+    color: #666;
+    line-height: 0.75;
+  }
+
+  &__social {
+    margin-right: 22px;
+  }
+
+  &__tags,
+  &__share {
+    & span {
+      line-height: 0.75;
+      color: #333;
+    }
+  }
+
+  &__tags {
+    margin-bottom: 3px;
+
+    & span {
+      margin-right: 25px;
+    }
+  }
+
+  &__share {
+    & span {
+      margin-right: 17px;
+    }
+  }
+
+  &__share-link {
+    &:hover {
+      svg {
+        path {
+          transition: all ease .3s;
+          fill: $text;
+        }
+      }
+    }
+  }
+
+  &__share-link+.author__share-link {
+    margin-left: 18px;
+  }
+
+  &__tags-link {
+    color: #666;
+    transition: all ease .3s;
+
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+
+@media (max-width: 780px) {
+  .blockquote {
+    padding: 25px 50px 25px 40px;
+  }
+}
+
+@media (max-width: 650px) {
+  .blockquote {
+    padding: 25px 30px 25px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-details {
+    &__box-img {
+      float: none;
+      display: block;
+      margin: 0 auto 15px;
+    }
+
+    &__box-text {
+      margin-bottom: 25px;
+    }
+
+    &__box-title {
+      margin-bottom: 5px;
+    }
+  }
+
+  .author {
+    &__info {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+  }
+}
+
+@media (max-width: 500px) {
+  .blockquote {
+    padding: 15px;
+
+    &__author {
+      &::before {
+        left: 20px;
+        bottom: 28px;
+      }
+    }
+  }
+
+  .author {
+    margin: 50px 0;
+  }
+
+}
