@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('modules/head/head.html', {
+  "title":"Contact"
+})
+<body>
+  @@include('modules/header/header.html', {})
+
+  <main class="main">
+    @@include('modules/top/top.html', {
+      "page": "Contact",
+      "link": "contact.html"
+    })
+
+    @@include('modules/contact/contact.html', {})
+
+    @@include('modules/articles/articles.html', {
+      "color-class": "color-default"
+    })
+  </main>
+
+  @@include('modules/footer/footer.html', {})
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&v=weekly"
+    defer>
+  </script>
+
+  <script>
+    let map;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: 29.760866608057626, lng: -95.36973769887088 },
+          zoom: 7,
+          styles: [
+            {
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "hue": "#ff4400"
+                },
+                {
+                  "saturation": -68
+                },
+                {
+                  "lightness": -4
+                },
+                {
+                  "gamma": 0.72
+                }
+              ]
+            },
+            {
+              "featureType": "road",
+              "elementType": "labels.icon"
+            },
+            {
+              "featureType": "landscape.man_made",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "hue": "#0077ff"
+                },
+                {
+                  "gamma": 3.1
+                }
+              ]
+            },
+            {
+              "featureType": "water",
+              "stylers": [
+                {
+                  "hue": "#00ccff"
+                },
+                {
+                  "gamma": 0.44
+                },
+                {
+                  "saturation": -33
+                }
+              ]
+            },
+            {
+              "featureType": "poi.park",
+              "stylers": [
+                {
+                  "hue": "#44ff00"
+                },
+                {
+                  "saturation": -23
+                }
+              ]
+            },
+            {
+              "featureType": "water",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                {
+                  "hue": "#007fff"
+                },
+                {
+                  "gamma": 0.77
+                },
+                {
+                  "saturation": 65
+                },
+                {
+                  "lightness": 99
+                }
+              ]
+            },
+            {
+              "featureType": "water",
+              "elementType": "labels.text.stroke",
+              "stylers": [
+                {
+                  "gamma": 0.11
+                },
+                {
+                  "weight": 5.6
+                },
+                {
+                  "saturation": 99
+                },
+                {
+                  "hue": "#0091ff"
+                },
+                {
+                  "lightness": -86
+                }
+              ]
+            },
+            {
+              "featureType": "transit.line",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "lightness": -48
+                },
+                {
+                  "hue": "#ff5e00"
+                },
+                {
+                  "gamma": 1.2
+                },
+                {
+                  "saturation": -23
+                }
+              ]
+            },
+            {
+              "featureType": "transit",
+              "elementType": "labels.text.stroke",
+              "stylers": [
+                {
+                  "saturation": -64
+                },
+                {
+                  "hue": "#ff9100"
+                },
+                {
+                  "lightness": 16
+                },
+                {
+                  "gamma": 0.47
+                },
+                {
+                  "weight": 2.7
+                }
+              ]
+            }
+          ]
+        });
+      }
+
+      window.initMap = initMap;
+  </script>
+
+  <script src="js/app.min.js"></script>
+</body>
+</html>
